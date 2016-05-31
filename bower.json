@@ -1,0 +1,20 @@
+{
+  "name": "treeze.web.forms",
+  "authors": [
+    "Victor Luiz Domingues <victor.luiz@treezebit.com>"
+  ],
+  "description": "treeze dynamic forms",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

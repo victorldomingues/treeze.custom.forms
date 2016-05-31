@@ -1,0 +1,17 @@
+{
+  "name": "treeze.web.forms",
+  "version": "1.0.0",
+  "description": "Treeze dynamic forms with json object",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TreezeBit <contato@treezebit.com> (http://treezebit.com)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
