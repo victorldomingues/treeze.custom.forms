@@ -61,20 +61,20 @@
             text: function (field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
-                            '<input type="text" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'">' +
+                            '<input type="text" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'" ' + form.actions.includeNgModel(field) + ' />' +
                         '</div>';
             },
             number:function(field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
-                            '<input type="number" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'">' +
+                            '<input type="number" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'" ' + form.actions.includeNgModel(field) + '>' +
                     '</div>';
             },
             checkbox: function(field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<div class="checkbox  ' + form.actions.getClass(field.class) + ' ">' +
                                 '<label for="'+ field.for +'">'+
-                                    '<input type="checkbox" value="'+ field.value +'" ' + (field.disabled ? "disabled" : "")   + ' name="' + field.name +'" />'+
+                                    '<input type="checkbox" value="'+ field.value +'" ' + (field.disabled ? "disabled" : "")   + ' name="' + field.name +'" ' + form.actions.includeNgModel(field) + ' />'+
                                     field.label +
                                 '</label>'+
                             '</div>' +
@@ -89,7 +89,7 @@
                                 var f = field.options[i];
                                 o += '<div class="radio ' + form.actions.getClass(field.class) + '">' +
                                         '<label>' +
-                                        '   <input type="radio" name="'+ field.name +'" id="'+ field.id +'" value="'+ f.value +'" > </input>' +
+                                        '   <input type="radio" name="'+ field.name +'" id="'+ field.id +'" value="'+ f.value +'" ' + form.actions.includeNgModel(field) + ' > </input>' +
                                             f.name +
                                         '</label>' +
                                     '</div>';
@@ -102,26 +102,26 @@
             file: function(field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
-                            '<input style="padding-bottom: 50px;" type="file" name="' + field.name +'" class="form-control  ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'">' +
+                            '<input style="padding-bottom: 50px;" type="file" name="' + field.name +'" class="form-control  ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +' ' + form.actions.includeNgModel(field) + ' ">' +
                     '</div>';
             },
             email: function (field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
-                            '<input type="email" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'">' +
+                            '<input type="email" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +' ' + form.actions.includeNgModel(field) + ' ">' +
                     '</div>';
             },
             password: function (field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
-                            '<input type="password" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'">' +
+                            '<input type="password" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'" ' + form.actions.includeNgModel(field) + '>' +
                     '</div>';
             },
             select: function (field){
                 var o = '';
                 o += '<div class="form-group ' + field.size +'">' +
                     '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
-                    '<select class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" >';
+                    '<select class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" ' + form.actions.includeNgModel(field) + ' >';
                     if(field.options != undefined && field.options.length > 0){
                         for(var i = 0; i < field.options.length; i ++){
                             var f = field.options[i];
@@ -135,7 +135,7 @@
             textarea: function (field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
-                            '<textarea class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'">' +
+                            '<textarea class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'" ' + form.actions.includeNgModel(field) + ' >' +
                             '</textarea>' +
                     '</div>';
             }
@@ -192,6 +192,12 @@
                         console.log('Error: type is not defined or not in text, password, email, file, number, select, radio, checkbox. text type was set as the default');
                         return form.fields.text(field)
                 }
+            },
+            includeNgModel: function(field){
+                var ngModel  =  '';
+                if (field.ngModel != undefined)
+                    ngModel = 'ng-model="' + field.ngModel + '"';
+                return ngModel;
             }
         }
 
@@ -202,7 +208,6 @@
         if (treezeCustomForms[methodOrOptions] ) {
             return treezeCustomForms[ methodOrOptions ].apply( this, Array.prototype.slice.call( arguments, 1 ));
         } else if ( typeof methodOrOptions === 'object' || ! methodOrOptions ) {
-            // Default to "init"
             return treezeCustomForms.init.apply( this, arguments );
         } else {
             $.error( 'Method ' +  methodOrOptions + ' does not exist on Treeze Custom Forms' );

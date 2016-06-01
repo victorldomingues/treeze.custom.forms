@@ -12,9 +12,10 @@
     "placeholder": "Ex: My text field",
     "required": true,
     "description": "My custom text field",
+    "ngModel": "myNgModel",
     "class": ["my-custom-class"],
     "id": "my-custom-id",
-    "invalidDecription" : "Is field is required",
+    "invalidDescription" : "Is field is required",
      "size": "col-md-12"
   },
     {
@@ -25,9 +26,10 @@
     "placeholder": "Ex: My numeric field",
     "required": true,
     "description": "My custom numeric field",
+    "ngModel": "myNgModel",
     "class": ["my-custom-class"],
     "id": "my-custom-id",
-    "invalidDecription" : "Is field is required",
+    "invalidDescription" : "Is field is required",
      "size": "col-md-6"
   },
     {
@@ -53,6 +55,7 @@
       "placeholder": "",
       "required": true,
       "description": "my custom checkbox field",
+      "ngModel": "myNgModel",
       "class": [
         "my-custom-class"
       ],
