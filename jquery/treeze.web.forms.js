@@ -32,13 +32,19 @@
 
     var form = {
         create: function (options){
-            var h = ""; var fields = options.fields;
+            var h = ""; var sections = options.sections;
             if(options.completeForm == true){
                 h += '<form class="col-md-12">';
 
-                for(var i = 0; i < fields.length ; i++){
-                    var f = fields[i];
-                    h += form.actions.resolveType(f);
+                for(var i = 0; i < sections.length ; i++){
+                    var section = sections[i];
+                    var fields = section.fields;
+                    h += '<div class="row">'; 
+                    for(var i = 0; i < fields.length ; i++){
+                        var f = fields[i];
+                        h += form.actions.resolveType(f);
+                    }
+                    h += '</div>';
                 };
 
                 h += '<div class="col-md-12 col-sm-12 col-xs-12">';
