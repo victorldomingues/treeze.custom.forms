@@ -7,215 +7,253 @@
       { 
           "name": "section 1",
           "fields": [
-                        {
-                        "key": "x_x__x",
-                        "type": "text",
-                        "name": "myTextField",
-                        "label": "My text field",
-                        "placeholder": "Ex: My text field",
-                        "required": true,
-                        "description": "My custom text field",
-                        "ngModel": "myNgModel",
-                        "class": ["my-custom-class"],
-                        "id": "my-custom-id",
-                        "invalidDescription" : "Is field is required",
-                        "size": "col-md-12"
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "number",
-                        "name": "myNumberField",
-                        "label": "My numeric field",
-                        "placeholder": "Ex: My numeric field",
-                        "required": true,
-                        "description": "My custom numeric field",
-                        "ngModel": "myNgModel",
-                        "class": ["my-custom-class"],
-                        "id": "my-custom-id",
-                        "invalidDescription" : "Is field is required",
-                        "size": "col-md-6"
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "text",
-                        "name": "myTextField",
-                        "label": "My text field",
-                        "placeholder": "Ex: My custom text field",
-                        "required": true,
-                        "description": "My custom text field",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-6"
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "checkbox",
-                        "name": "myCheckboxField",
-                        "label": "My checkbox field",
-                        "placeholder": "",
-                        "required": true,
-                        "description": "my custom checkbox field",
-                        "ngModel": "myNgModel",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-3"
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "checkbox",
-                        "name": "myCheckboxField",
-                        "label": "My checkbox field",
-                        "placeholder": "",
-                        "required": true,
-                        "description": "my custom checkbox field",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-2"
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "radio",
-                        "name": "myRadioField",
-                        "label": "My radio field",
-                        "placeholder": "",
-                        "required": true,
-                        "description": "my custom radio field",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-3",
-                        "options": [
-                          {  "value": "1", "name": "Option 1" },
-                          {  "value": "2", "name": "Option 2" },
-                          {  "value": "3", "name": "Option 3" }
-                        ]
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "select",
-                        "name": "mySelectField",
-                        "label": "My select field",
-                        "placeholder": "",
-                        "required": true,
-                        "description": "my custom select field",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-6",
-                        "options": [
-                          {  "value": "1", "name": "Option 1" },
-                          {  "value": "2", "name": "Option 2" },
-                          {  "value": "3", "name": "Option 3" }
-                        ]
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "select",
-                        "name": "mySelectField",
-                        "label": "My select field",
-                        "placeholder": "My select field",
-                        "required": true,
-                        "description": "my custom select field",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-6",
-                        "options": [
-                          {  "value": "1", "name": "Option 1" },
-                          {  "value": "2", "name": "Option 2" },
-                          {  "value": "3", "name": "Option 3" }
-                        ]
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "password",
-                        "name": "myPasswordField",
-                        "label": "My password field",
-                        "placeholder": "Ex: My custom password field",
-                        "required": true,
-                        "description": "My custom password field",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-4"
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "email",
-                        "name": "myEmailField",
-                        "label": "My email field",
-                        "placeholder": "Ex: My custom email field",
-                        "required": true,
-                        "description": "My custom email field",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-4"
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "textarea",
-                        "name": "myTextAreaField",
-                        "label": "My textarea field",
-                        "placeholder": "Ex: My custom textarea field",
-                        "required": true,
-                        "description": "My custom textarea field",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-12"
-                        },
-                        {
-                        "key": "x_x__x",
-                        "type": "file",
-                        "name": "myFileField",
-                        "label": "My file field",
-                        "placeholder": "Ex: My custom file field",
-                        "required": true,
-                        "description": "My custom textarea field",
-                        "class": [
-                          "my-custom-class"
-                        ],
-                        "id": "my-custom-id",
-                        "invalidDescription": "Is field is required",
-                        "size": "col-md-5"
-                        }
-
-                      ]   
+            {
+              "key": "x_x__x",
+              "type": "text",
+              "name": "myTextField",
+              "label": "My text field",
+              "placeholder": "Ex: My text field",
+              "required": true,
+              "description": "My custom text field",
+              "ngModel": "myNgModel",
+              "class": ["my-custom-class"],
+              "id": "my-custom-id",
+              "invalidDescription" : "Is field is required",
+              "size": "col-md-12"
+            },
+            {
+              "key": "x_x__x",
+              "type": "number",
+              "name": "myNumberField",
+              "label": "My numeric field",
+              "placeholder": "Ex: My numeric field",
+              "required": true,
+              "description": "My custom numeric field",
+              "ngModel": "myNgModel",
+              "class": ["my-custom-class"],
+              "id": "my-custom-id",
+              "invalidDescription" : "Is field is required",
+              "size": "col-md-6"
+            },
+            {
+              "key": "x_x__x",
+              "type": "text",
+              "name": "myTextField",
+              "label": "My text field",
+              "placeholder": "Ex: My custom text field",
+              "required": true,
+              "description": "My custom text field",
+              "class": [
+                "my-custom-class"
+              ],
+              "id": "my-custom-id",
+              "invalidDescription": "Is field is required",
+              "size": "col-md-6"
+            },
+            {
+              "key": "x_x__x",
+              "type": "checkbox",
+              "name": "myCheckboxField",
+              "label": "My checkbox field",
+              "placeholder": "",
+              "required": true,
+              "description": "my custom checkbox field",
+              "ngModel": "myNgModel",
+              "class": [
+                "my-custom-class"
+              ],
+              "id": "my-custom-id",
+              "invalidDescription": "Is field is required",
+              "size": "col-md-3"
+            },
+            {
+              "key": "x_x__x",
+              "type": "checkbox",
+              "name": "myCheckboxField",
+              "label": "My checkbox field",
+              "placeholder": "",
+              "required": true,
+              "description": "my custom checkbox field",
+              "class": [
+                "my-custom-class"
+              ],
+              "id": "my-custom-id",
+              "invalidDescription": "Is field is required",
+              "size": "col-md-2"
+            },
+            {
+              "key": "x_x__x",
+              "type": "radio",
+              "name": "myRadioField",
+              "label": "My radio field",
+              "placeholder": "",
+              "required": true,
+              "description": "my custom radio field",
+              "class": [
+                "my-custom-class"
+              ],
+              "id": "my-custom-id",
+              "invalidDescription": "Is field is required",
+              "size": "col-md-3",
+              "options": [
+                {  "value": "1", "name": "Option 1" },
+                {  "value": "2", "name": "Option 2" },
+                {  "value": "3", "name": "Option 3" }
+              ]
+            },
+            {
+              "key": "x_x__x",
+              "type": "select",
+              "name": "mySelectField",
+              "label": "My select field",
+              "placeholder": "",
+              "required": true,
+              "description": "my custom select field",
+              "class": [
+                "my-custom-class"
+              ],
+              "id": "my-custom-id",
+              "invalidDescription": "Is field is required",
+              "size": "col-md-6",
+              "options": [
+                {  "value": "1", "name": "Option 1" },
+                {  "value": "2", "name": "Option 2" },
+                {  "value": "3", "name": "Option 3" }
+              ]
+            },
+            {
+              "key": "x_x__x",
+              "type": "select",
+              "name": "mySelectField",
+              "label": "My select field",
+              "placeholder": "My select field",
+              "required": true,
+              "description": "my custom select field",
+              "class": [
+                "my-custom-class"
+              ],
+              "id": "my-custom-id",
+              "invalidDescription": "Is field is required",
+              "size": "col-md-6",
+              "options": [
+                {  "value": "1", "name": "Option 1" },
+                {  "value": "2", "name": "Option 2" },
+                {  "value": "3", "name": "Option 3" }
+              ]
+            },
+            {
+              "key": "x_x__x",
+              "type": "password",
+              "name": "myPasswordField",
+              "label": "My password field",
+              "placeholder": "Ex: My custom password field",
+              "required": true,
+              "description": "My custom password field",
+              "class": [
+                "my-custom-class"
+              ],
+              "id": "my-custom-id",
+              "invalidDescription": "Is field is required",
+              "size": "col-md-4"
+            },
+            {
+              "key": "x_x__x",
+              "type": "email",
+              "name": "myEmailField",
+              "label": "My email field",
+              "placeholder": "Ex: My custom email field",
+              "required": true,
+              "description": "My custom email field",
+              "class": [
+                "my-custom-class"
+              ],
+              "id": "my-custom-id",
+              "invalidDescription": "Is field is required",
+              "size": "col-md-4"
+            },
+            {
+              "key": "x_x__x",
+              "type": "textarea",
+              "name": "myTextAreaField",
+              "label": "My textarea field",
+              "placeholder": "Ex: My custom textarea field",
+              "required": true,
+              "description": "My custom textarea field",
+              "class": [
+                "my-custom-class"
+              ],
+              "id": "my-custom-id",
+              "invalidDescription": "Is field is required",
+              "size": "col-md-12"
+            },
+            {
+            "key": "x_x__x",
+            "type": "file",
+            "name": "myFileField",
+            "label": "My file field",
+            "placeholder": "Ex: My custom file field",
+            "required": true,
+            "description": "My custom textarea field",
+            "class": [
+              "my-custom-class"
+            ],
+            "id": "my-custom-id",
+            "invalidDescription": "Is field is required",
+            "size": "col-md-5"
+            }
+          ]
+      },
+      {
+        "name": "section 2",
+        "fields": [
+          {
+            "key": "x_x__x",
+            "type": "text",
+            "name": "myFileField",
+            "label": "My file field",
+            "placeholder": "Ex: My custom file field",
+            "required": true,
+            "description": "My custom textarea field",
+            "class": [
+              "my-custom-class"
+            ],
+            "id": "my-custom-id",
+            "invalidDescription": "Is field is required",
+            "size": "col-md-4",
+            "clear": "both"
+          },
+          {
+            "key": "x_x__x",
+            "type": "text",
+            "name": "my text field in section 2",
+            "label": "My file field",
+            "placeholder": "Ex: My custom file field",
+            "required": true,
+            "description": "My custom textarea field",
+            "class": [
+              "my-custom-class"
+            ],
+            "id": "my-custom-id",
+            "invalidDescription": "Is field is required",
+            "size": "col-md-6"
+          },{
+            "key": "x_x__x",
+            "type": "text",
+            "name": "my text field in section 2",
+            "label": "My file field",
+            "placeholder": "Ex: My custom file field",
+            "required": true,
+            "description": "My custom textarea field",
+            "class": [
+              "my-custom-class"
+            ],
+            "id": "my-custom-id",
+            "invalidDescription": "Is field is required",
+            "size": "col-md-6"
+          }
+        ]
       }
- ],
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  ],
   "buttons": {
     "submit": true,
     "reset": true

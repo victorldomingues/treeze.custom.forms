@@ -32,16 +32,18 @@
 
     var form = {
         create: function (options){
+            console.log(options);
             var h = ""; var sections = options.sections;
+            console.log(sections.length);
             if(options.completeForm == true){
                 h += '<form class="col-md-12">';
-
                 for(var i = 0; i < sections.length ; i++){
                     var section = sections[i];
+                    h += '<h2>' + section.name + '</h2><div style="clear: both" /> ';
                     var fields = section.fields;
                     h += '<div class="row">'; 
-                    for(var i = 0; i < fields.length ; i++){
-                        var f = fields[i];
+                    for(var j = 0; j < fields.length ; j++){
+                        var f = fields[j];
                         h += form.actions.resolveType(f);
                     }
                     h += '</div>';
@@ -54,12 +56,20 @@
                     h += form.buttons.reset(options.buttons.reset);
 
                 h += '</div>';
+
                 h += '</form>';
             }else{
-                for(var i = 0; i < fields.length ; i++){
-                    var f = fields[i];
-                    h += form.actions.resolveType(f);
-                }
+                for(var i = 0; i < sections.length ; i++){
+                    var section = sections[i];
+                    var fields = section.fields;
+                    h += '<h2>' + section.name + '</h2><div style="clear: both" /> ';
+                    h += '<div class="row">';
+                    for(var j = 0; j < fields.length ; j++){
+                        var f = fields[j];
+                        h += form.actions.resolveType(f);
+                    }
+                    h += '</div>';
+                };
             }
             e.html(h);
         },
@@ -68,13 +78,13 @@
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
                             '<input type="text" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'" ' + form.actions.includeNgModel(field) + ' />' +
-                        '</div>';
+                        '</div>' +  form.actions.resolveClear(field.clear);
             },
             number:function(field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
                             '<input type="number" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'" ' + form.actions.includeNgModel(field) + '>' +
-                    '</div>';
+                    '</div>'  +  form.actions.resolveClear(field.clear);
             },
             checkbox: function(field){
                 return '<div class="form-group ' + field.size +'">' +
@@ -84,7 +94,7 @@
                                     field.label +
                                 '</label>'+
                             '</div>' +
-                        '</div>';
+                        '</div>'  +  form.actions.resolveClear(field.clear);
             },
             radio: function(field){
                 var o = '';
@@ -103,25 +113,25 @@
                         };
                o += '</div>';
 
-                return o;
+                return o  +  form.actions.resolveClear(field.clear);
             },
             file: function(field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
                             '<input style="padding-bottom: 50px;" type="file" name="' + field.name +'" class="form-control  ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +' ' + form.actions.includeNgModel(field) + ' ">' +
-                    '</div>';
+                    '</div>'  +  form.actions.resolveClear(field.clear);
             },
             email: function (field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
                             '<input type="email" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +' ' + form.actions.includeNgModel(field) + ' ">' +
-                    '</div>';
+                    '</div> '  +  form.actions.resolveClear(field.clear)                    ;
             },
             password: function (field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
                             '<input type="password" name="' + field.name +'" class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'" ' + form.actions.includeNgModel(field) + '>' +
-                    '</div>';
+                    '</div>'  +  form.actions.resolveClear(field.clear);
             },
             select: function (field){
                 var o = '';
@@ -136,14 +146,14 @@
                     };
                     o += '</select>' +
                     '</div>';
-                return o;
+                return o  +  form.actions.resolveClear(field.clear);
             },
             textarea: function (field){
                 return '<div class="form-group ' + field.size +'">' +
                             '<label for="' + field.for + '"> ' + field.label  + ' </label>' +
                             '<textarea class="form-control ' + form.actions.getClass(field.class) + ' " id="' + field.id +'" placeholder="'+ field.placeholder +'" ' + form.actions.includeNgModel(field) + ' >' +
                             '</textarea>' +
-                    '</div>';
+                    '</div>'  +  form.actions.resolveClear(field.clear);
             }
         },
         buttons: {
@@ -204,6 +214,12 @@
                 if (field.ngModel != undefined)
                     ngModel = 'ng-model="' + field.ngModel + '"';
                 return ngModel;
+            },
+            resolveClear: function (clear) {
+                var t = '';
+                if(clear != undefined && clear == 'both')
+                    t = '<div style="clear: both;" />';
+                return t;
             }
         }
 
